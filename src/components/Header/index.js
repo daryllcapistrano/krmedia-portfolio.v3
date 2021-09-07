@@ -1,25 +1,16 @@
 import * as React from "react"
 import { Link } from 'gatsby'
-
+import { Box, Flex, Spacer } from "@chakra-ui/react"
 
 //todo: style
 
-const headerStyles = {
-  height: 100,
-}
-
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-
-
 const Header = () => {
   return (
-      <div style={headerStyles}>
-        <div>insert logo here</div>
-        <div>
-          <ul style={listStyles}>
+      <Flex p="4">
+        <Box>insert logo here</Box>
+        <Spacer/>
+        <Box>
+          <ul>
             <li>
               <Link to="/videography">videography</Link>
             </li>
@@ -37,8 +28,8 @@ const Header = () => {
             </li>
             
           </ul>
-        </div>
-      </div>
+        </Box>
+      </Flex>
   )
 }
 

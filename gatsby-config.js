@@ -4,6 +4,7 @@ module.exports = {
     title: "krmedia-portfolio",
   },
   plugins: [
+    "@chakra-ui/gatsby-plugin",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
