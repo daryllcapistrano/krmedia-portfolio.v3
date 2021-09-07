@@ -1,5 +1,4 @@
 import * as React from "react"
-// added below
 import Layout from "../components/Layout"
 
 
