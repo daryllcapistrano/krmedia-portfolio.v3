@@ -8,7 +8,7 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from '@chakra-ui/react';
-// import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const SocialButton = ({
   children,
@@ -53,13 +53,13 @@ export default function Footer() {
         <Text>© 2020 Chakra Templates. All rights reserved</Text>
         <Stack direction={'row'} spacing={6}>
           <SocialButton label={'Twitter'} href={'#'}>
-            {/* <FaTwitter /> */}
+            <FaTwitter />
           </SocialButton>
           <SocialButton label={'YouTube'} href={'#'}>
-            {/* <FaYoutube /> */}
+            <FaYoutube />
           </SocialButton>
           <SocialButton label={'Instagram'} href={'#'}>
-            {/* <FaInstagram /> */}
+            <FaInstagram />
           </SocialButton>
         </Stack>
       </Container>
