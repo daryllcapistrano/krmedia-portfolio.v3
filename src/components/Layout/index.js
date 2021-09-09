@@ -3,8 +3,8 @@ import Header from "../Header"
 import Footer from "../Footer"
 
 const divStyles = {
-  background: "#c71919",
-  color: "#ffffff",
+  background: "#ffffff",
+  color: "#000000",
 }
 
 export default function Layout({ children }) {
