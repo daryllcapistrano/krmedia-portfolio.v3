@@ -9,8 +9,8 @@ const VideographyPage = ({data}) => {
       <Layout>
         <SimpleGrid columns={[1, null, 2]} spacing="20px" margin="10px">
           {
-            data.allFile.nodes.map(node => (
-              <Box bg="orange" height="333px">{node.name}</Box>
+            data.allMdx.nodes.map(node => (
+              <Box bg="orange" height="333px">{node.frontmatter.title}</Box>
             ))
           }
          
@@ -21,16 +21,22 @@ const VideographyPage = ({data}) => {
   )
 }
 
+
+// GraphQL markdown query in order
 export const query = graphql`
   {
-    allFile(filter: {sourceInstanceName: {eq: "markdown"}}) {
+    allMdx(sort: {order: ASC, fields: frontmatter___order}) {
       nodes {
         id
-        name
+        slug
+        frontmatter {
+          title
+        }
       }
     }
   }
 `
+
 
 export default VideographyPage
 
