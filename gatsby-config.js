@@ -39,5 +39,6 @@ module.exports = {
         path: `${__dirname}/markdown`,
       }
     },
+    "gatsby-plugin-mdx",
   ],
 };
