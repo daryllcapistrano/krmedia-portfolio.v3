@@ -19,10 +19,25 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: "photos",
+        path: "./src/images/photos/",
       },
-      __key: "images",
+      __key: "photos",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "videos",
+        path: "./src/images/videos/",
+      },
+      __key: "videos",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/markdown`,
+      }
     },
   ],
 };
