@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from "../../components/Layout"
 import { SimpleGrid, Box } from "@chakra-ui/react"
 
@@ -10,7 +10,7 @@ const VideographyPage = ({data}) => {
         <SimpleGrid columns={[1, null, 2]} spacing="20px" margin="10px">
           {
             data.allMdx.nodes.map(node => (
-              <Box bg="orange" height="333px">{node.frontmatter.title}</Box>
+              <Box bg="orange" height="333px"><Link to={`/videography/${node.slug}`}>{node.frontmatter.title}</Link></Box>
             ))
           }
          
