@@ -14,7 +14,7 @@ const VideographyPage = ({data}) => {
         <SimpleGrid columns={[1, null, 2]} spacing="20px" margin="10px">
           {
             data.allMdx.nodes.map(node => (
-              <Box bg="orange">
+              <Box>
                 <Link to={`/videography/${node.slug}`}>
                 <GatsbyImage image={node.frontmatter.hero_image.childImageSharp.gatsbyImageData} alt={node.frontmatter.hero_image_alt} />
                 <Text align="center">{node.frontmatter.title}</Text>
