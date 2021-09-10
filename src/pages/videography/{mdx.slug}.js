@@ -1,41 +1,34 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-// import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image' 
-
-
+import { Center, Container } from '@chakra-ui/layout'
+import ReactPlayer from 'react-player'
 import Layout from '../../components/Layout'
 
 const VideoPage = ({data}) => {
-  const image = getImage(data.mdx.frontmatter.hero_image)
 
   return (
     <Layout>
-      <p>{data.mdx.frontmatter.title}</p>
-      <GatsbyImage
-      image={image}
-      alt={data.mdx.frontmatter.hero_image_alt}
-    />
+        <Center h="90vh">
+        <Container> 
+          <ReactPlayer url={data.mdx.frontmatter.videoSourceURL} controls={true} width="auto"/>
+        </Container>
+        </Center>
     </Layout>
   )
 }
 
 //GraphQL query
 export const query = graphql`
-  query ($id: String) {
-    mdx(id: {eq: $id}) {
-      frontmatter {
-        title
-        order
-        hero_image_alt
-        hero_image {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
-      }
+query ($id: String) {
+  mdx(id: {eq: $id}) {
+    frontmatter {
+      title
+      order
+      videoSourceURL
+      videoTitle
     }
   }
+}
 `
 
 export default VideoPage
