@@ -15,7 +15,7 @@ const VideoPage = ({data}) => {
       <GatsbyImage
       image={image}
       alt={data.mdx.frontmatter.hero_image_alt}
-      />
+    />
     </Layout>
   )
 }
