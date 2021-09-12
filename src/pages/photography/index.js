@@ -1,27 +1,35 @@
 import * as React from 'react';
+import { graphql } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/Layout';
-import { Grid, GridItem } from '@chakra-ui/layout';
 
-// begin import photos
-import photoOne from '../../images/photos/Poler2- thumbnail.jpg';
-import photoTwo from '../../images/photos/artsy-1-thumbnail.jpg';
-import photoThree from '../../images/photos/ale_artsy_resize.jpg';
+import { Box, Image } from '@chakra-ui/react';
 
-// end import
-
-const PhotographyPage = () => {
+const PhotographyPage = ({ data }) => {
   return (
     <main>
       <Layout>
-        <Grid height="100vh" templateRows="repeat(2, 1fr)" templateColumns="repeat(5, 1fr)" gap={4}>
-          <GridItem rowSpan={2} colSpan={1} bg="blue.500" />
-          <GridItem colSpan={2} bg="blue.500" />
-          <GridItem colSpan={2} bg="blue.500" />
-          <GridItem colSpan={4} bg="blue.500" />
-        </Grid>
+        <Box padding={4} w="100%" maxW="100vw" mx="auto" sx={{ columnCount: [1, 2, 3], columnGap: '8px' }}>
+          {/* map over graphql data */}
+          {data.allFile.nodes.map((node) => (
+            <GatsbyImage key="src" image={node.childImageSharp.gatsbyImageData} alt="Alt" />
+          ))}
+        </Box>
       </Layout>
     </main>
   );
 };
+
+export const query = graphql`
+  {
+    allFile(filter: { sourceInstanceName: { eq: "photos" } }) {
+      nodes {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+`;
 
 export default PhotographyPage;
