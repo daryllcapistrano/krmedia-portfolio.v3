@@ -24,14 +24,14 @@ module.exports = {
       },
       __key: "photos",
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "videos",
-        path: "./src/images/videos/",
-      },
-      __key: "videos",
-    },
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     name: "videos",
+    //     path: "./src/images/videos/",
+    //   },
+    //   __key: "videos",
+    // },
     {
       resolve: "gatsby-source-filesystem",
       options: {
