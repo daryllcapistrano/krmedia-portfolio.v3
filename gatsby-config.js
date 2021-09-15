@@ -1,28 +1,36 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "krmedia-portfolio",
+    siteUrl: 'https://www.keatonrodgers.com',
+    title: 'krmedia-portfolio',
   },
   plugins: [
-    "@chakra-ui/gatsby-plugin",
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    '@chakra-ui/gatsby-plugin',
+    'gatsby-plugin-image',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: "src/images/icon.png",
+        icon: 'src/images/icon.png',
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "photos",
-        path: "./src/images/photos/",
+        name: 'photos',
+        path: './src/images/photos/',
       },
-      __key: "photos",
+      __key: 'photos',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'assets',
+        path: './src/images/assets/',
+      },
+      __key: 'assets',
     },
     // {
     //   resolve: "gatsby-source-filesystem",
@@ -33,15 +41,15 @@ module.exports = {
     //   __key: "videos",
     // },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         name: `markdown`,
         path: `${__dirname}/markdown`,
-      }
+      },
     },
-    "gatsby-plugin-mdx",
+    'gatsby-plugin-mdx',
     {
-      resolve: "gatsby-remark-embed-video",
+      resolve: 'gatsby-remark-embed-video',
       options: {
         width: 800,
         ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
@@ -51,12 +59,11 @@ module.exports = {
         loadingStrategy: 'lazy', //Optional: Enable support for lazy-load offscreen iframes. Default is disabled.
         urlOverrides: [
           {
-            id: "youtube",
-            embedURL: videoId =>
-              `https://www.youtube-nocookie.com/embed/${videoId}`,
+            id: 'youtube',
+            embedURL: (videoId) => `https://www.youtube-nocookie.com/embed/${videoId}`,
           },
         ], //Optional: Override URL of a service provider, e.g to enable youtube-nocookie support
-        containerClass: "embedVideo-container", //Optional: Custom CSS class for iframe container, for multiple classes separate them by space
+        containerClass: 'embedVideo-container', //Optional: Custom CSS class for iframe container, for multiple classes separate them by space
         iframeId: false, //Optional: if true, iframe's id will be set to what is provided after 'video:' (YouTube IFrame player API requires iframe id)
       },
     },
