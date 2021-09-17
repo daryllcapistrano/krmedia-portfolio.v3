@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import { Center, Container } from '@chakra-ui/layout';
+import { Center, Container, Text } from '@chakra-ui/layout';
 import ReactPlayer from 'react-player';
 import Layout from '../../components/Layout';
 
@@ -9,6 +9,9 @@ const VideoPage = ({ data }) => {
     <Layout>
       <Center h="90vh">
         <Container>
+          <Text textAlign={'center'} mb={'4'} fontWeight={'bold'}>
+            {data.mdx.frontmatter.videoTitle}
+          </Text>
           <ReactPlayer url={data.mdx.frontmatter.videoSourceURL} controls={true} width="auto" />
         </Container>
       </Center>

@@ -38,7 +38,7 @@ export const query = graphql`
         id
         relativePath
         childImageSharp {
-          gatsbyImageData
+          gatsbyImageData(placeholder: BLURRED, quality: 90)
         }
       }
     }

@@ -12,7 +12,7 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuDivider,
+  // MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
@@ -22,7 +22,6 @@ import Logo from '../Logo';
 import AvatarImage from '../../images/assets/contact-image.jpg';
 
 const Links = [
-  { text: 'home', url: '/' },
   { text: 'videography', url: '/videography' },
   { text: 'photography', url: '/photography' },
   { text: 'clients', url: '/clients' },
@@ -34,10 +33,10 @@ export default function Header() {
 
   return (
     <>
-      <Box bg={useColorModeValue('white', 'black')} px={4}>
+      <Box bg={useColorModeValue('white', 'black')} px={4} mt={3}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
-            size={'md'}
+            size={'lg'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
@@ -60,24 +59,29 @@ export default function Header() {
               ))}
             </HStack>
           </HStack>
-          <Flex alignItems={'center'}>
+          {/* <Flex alignItems={'center'}>
             <Menu>
               <MenuButton as={Button} rounded={'full'} variant={'link'} cursor={'pointer'} minW={0}>
-                <Avatar size={'md'} src={AvatarImage} />
+                <Avatar size={'lg'} src={AvatarImage} />
               </MenuButton>
               <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
+                <MenuItem>
+                  <a href="https://www.instagram.com/keatonrodgers">Instagram</a>
+                </MenuItem>
+                <MenuItem>
+                  <a href="https://www.instagram.com/keatonrodgers">Instagram</a>
+                </MenuItem>
+                <MenuItem>
+                  <a href="https://www.instagram.com/keatonrodgers">Instagram</a>
+                </MenuItem>
               </MenuList>
             </Menu>
-          </Flex>
+          </Flex> */}
         </Flex>
 
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
+            <Stack as={'nav'} spacing={4} fontWeight={500}>
               {Links.map((link) => (
                 <Link as={GatsbyLink} key={link.url} to={link.url} _hover={'none'} color="black">
                   {link.text}
