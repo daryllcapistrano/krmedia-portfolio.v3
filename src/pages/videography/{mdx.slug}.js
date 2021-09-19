@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import GatsbyLink from 'gatsby-link';
-import { Box, Button, Center, Container, Text } from '@chakra-ui/layout';
+import { Box, Button, Center, Container, Divider, Text } from '@chakra-ui/layout';
 import ReactPlayer from 'react-player';
 import Layout from '../../components/Layout';
 import { Link } from '@chakra-ui/react';
@@ -21,6 +21,33 @@ const VideoPage = ({ data }) => {
           <Text textAlign={'center'} mt={'4'} fontWeight={'light'}>
             {data.mdx.frontmatter.videoTitle}
           </Text>
+
+          {/* conditionally render multiple video instances  */}
+          {data.mdx.frontmatter.videoSourceURLTwo && (
+            <Box paddingTop="10">
+              <ReactPlayer url={data.mdx.frontmatter.videoSourceURLTwo} controls={true} width="auto" />
+              <Text textAlign={'center'} mt={'4'} fontWeight={'light'}>
+                {data.mdx.frontmatter.videoTitleTwo}
+              </Text>
+            </Box>
+          )}
+          {data.mdx.frontmatter.videoSourceURLThree && (
+            <Box paddingTop="10">
+              <ReactPlayer url={data.mdx.frontmatter.videoSourceURLThree} controls={true} width="auto" />
+              <Text textAlign={'center'} mt={'4'} fontWeight={'light'}>
+                {data.mdx.frontmatter.videoTitleThree}
+              </Text>
+            </Box>
+          )}
+          {data.mdx.frontmatter.videoSourceURLFour && (
+            <Box paddingTop="10">
+              <ReactPlayer url={data.mdx.frontmatter.videoSourceURLFour} controls={true} width="auto" />
+              <Text textAlign={'center'} mt={'4'} fontWeight={'light'}>
+                {data.mdx.frontmatter.videoTitleFour}
+              </Text>
+            </Box>
+          )}
+          {/* end conditional rendering */}
         </Container>
       </Center>
     </Layout>
@@ -35,7 +62,13 @@ export const query = graphql`
         title
         order
         videoSourceURL
+        videoSourceURLTwo
+        videoSourceURLThree
+        videoSourceURLFour
         videoTitle
+        videoTitleTwo
+        videoTitleThree
+        videoTitleFour
       }
     }
   }
