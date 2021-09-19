@@ -7,6 +7,7 @@ import {
   HStack,
   Link,
   IconButton,
+  ButtonGroup,
   Button,
   Menu,
   MenuButton,
@@ -19,12 +20,13 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import Logo from '../Logo';
-import AvatarImage from '../../images/assets/contact-image.jpg';
+import { Collapse } from '@chakra-ui/transition';
+// import AvatarImage from '../../images/assets/contact-image.jpg';
 
 const Links = [
   { text: 'videography', url: '/videography' },
   { text: 'photography', url: '/photography' },
-  { text: 'clients', url: '/clients' },
+  // { text: 'clients', url: '/clients' },
   { text: 'contact', url: '/contact' },
 ];
 
@@ -33,11 +35,12 @@ export default function Header() {
 
   return (
     <>
-      <Box bg={useColorModeValue('white', 'black')} px={4} mt={3}>
+      <Box bg={useColorModeValue('white', 'black')} px={4} mt={3} fontFamily={'Poppins'}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'lg'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            background={'white'}
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
@@ -79,12 +82,15 @@ export default function Header() {
           </Flex> */}
         </Flex>
 
+        {/* mobile menu */}
         {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4} fontWeight={500}>
+          <Box my={4} display={{ md: 'none' }} p="20px" rounded="md" shadow="md">
+            <Stack as={'nav'} spacing={6} fontWeight={500}>
               {Links.map((link) => (
-                <Link as={GatsbyLink} key={link.url} to={link.url} _hover={'none'} color="black">
-                  {link.text}
+                <Link as={GatsbyLink} key={link.url} to={link.url} display="inline-block" _hover={'none'}>
+                  <Button colorScheme={'blackAlpha'} isFullWidth>
+                    {link.text}
+                  </Button>
                 </Link>
               ))}
             </Stack>

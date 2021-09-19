@@ -1,18 +1,26 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import { Center, Container, Text } from '@chakra-ui/layout';
+import GatsbyLink from 'gatsby-link';
+import { Box, Button, Center, Container, Text } from '@chakra-ui/layout';
 import ReactPlayer from 'react-player';
 import Layout from '../../components/Layout';
+import { Link } from '@chakra-ui/react';
+
+import { IoMdArrowRoundBack } from 'react-icons/io';
 
 const VideoPage = ({ data }) => {
   return (
     <Layout>
-      <Center h="90vh">
+      <Center flex={'1'} marginY="28">
         <Container>
-          <Text textAlign={'center'} mb={'4'} fontWeight={'bold'}>
+          <Link as={GatsbyLink} to="/videography" fontWeight={'light'} mb={'4'}>
+            <IoMdArrowRoundBack />
+            back
+          </Link>
+          <ReactPlayer url={data.mdx.frontmatter.videoSourceURL} controls={true} width="auto" />
+          <Text textAlign={'center'} mt={'4'} fontWeight={'light'}>
             {data.mdx.frontmatter.videoTitle}
           </Text>
-          <ReactPlayer url={data.mdx.frontmatter.videoSourceURL} controls={true} width="auto" />
         </Container>
       </Center>
     </Layout>

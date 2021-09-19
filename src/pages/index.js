@@ -8,7 +8,7 @@ const VideographyPage = ({ data }) => {
   return (
     <main>
       <Layout>
-        <SimpleGrid columns={[1, null, 2]} spacing="20px" margin="16px">
+        <SimpleGrid columns={[1, null, 2]} spacing="20px" margin="16px" pb="300px">
           {data.allMdx.nodes.map((node) => (
             <Box id={node.id} paddingTop={'8'}>
               <Link to={`/videography/${node.slug}`}>

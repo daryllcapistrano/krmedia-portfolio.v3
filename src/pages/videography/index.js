@@ -8,15 +8,17 @@ const VideographyPage = ({ data }) => {
   return (
     <main>
       <Layout>
-        <SimpleGrid columns={[1, null, 2]} spacing="20px" margin="16px">
+        <SimpleGrid columns={[1, null, 2]} spacing="20px" margin="16px" pb="300px">
           {data.allMdx.nodes.map((node) => (
-            <Box key={node.id}>
+            <Box id={node.id} paddingTop={'8'}>
               <Link to={`/videography/${node.slug}`}>
                 <GatsbyImage
                   image={node.frontmatter.hero_image.childImageSharp.gatsbyImageData}
                   alt={node.frontmatter.hero_image_alt}
                 />
-                <Text align="center">{node.frontmatter.title}</Text>
+                <Text align={'start'} fontWeight={'light'}>
+                  {node.frontmatter.title}
+                </Text>
               </Link>
             </Box>
           ))}

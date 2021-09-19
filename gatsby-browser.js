@@ -1,5 +1,6 @@
 import React from 'react';
 import SimpleReactLightbox from 'simple-react-lightbox';
+import '@fontsource/poppins';
 // USE THE IMPORT BELOW INSTEAD IF YOU ARE USING THE PRO VERSION
 // import SimpleReactLightbox from 'simple-react-lightbox-pro'
 
