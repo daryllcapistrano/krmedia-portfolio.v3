@@ -41,6 +41,7 @@ export default function Footer() {
       >
         <Text fontWeight={'hairline'}>© 2021 Keaton Rodgers. All rights reserved</Text>
         <Stack direction={'row'} spacing={6}>
+          <Text fontWeight={'light  '}>Find me on:</Text>
           <SocialButton label={'Vimeo'} href={'https://vimeo.com/user135455357'}>
             <FaVimeoV />
           </SocialButton>

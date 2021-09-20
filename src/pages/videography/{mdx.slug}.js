@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import GatsbyLink from 'gatsby-link';
-import { Box, Button, Center, Container, Divider, Text } from '@chakra-ui/layout';
-import ReactPlayer from 'react-player';
+import { Box, Center, Container, Text } from '@chakra-ui/layout';
+import ReactPlayer from 'react-player/lazy';
 import Layout from '../../components/Layout';
 import { Link } from '@chakra-ui/react';
 

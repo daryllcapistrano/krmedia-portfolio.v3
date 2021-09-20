@@ -1,32 +1,12 @@
 import * as React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
-import {
-  Box,
-  Flex,
-  Avatar,
-  HStack,
-  Link,
-  IconButton,
-  ButtonGroup,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  // MenuDivider,
-  useDisclosure,
-  useColorModeValue,
-  Stack,
-} from '@chakra-ui/react';
+import { Box, Flex, HStack, Link, IconButton, Button, useDisclosure, useColorModeValue, Stack } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import Logo from '../Logo';
-import { Collapse } from '@chakra-ui/transition';
-// import AvatarImage from '../../images/assets/contact-image.jpg';
 
 const Links = [
   { text: 'videography', url: '/videography' },
   { text: 'photography', url: '/photography' },
-  // { text: 'clients', url: '/clients' },
   { text: 'contact', url: '/contact' },
 ];
 
