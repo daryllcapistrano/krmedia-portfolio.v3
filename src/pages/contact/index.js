@@ -57,7 +57,7 @@ const ContactPage = ({ data }) => {
           </Container>
           <Center>
             <Stack spacing={2} align={'center'} maxW={'md'} w={'full'} h={'100vh'} padding="4">
-              <Text fontWeight="bold">Clients I've worked with:</Text>
+              <Text fontWeight="bold">Select Clients</Text>
               <UnorderedList styleType="none" width="100%" fontSize="sm">
                 {clients.map((client, index) => (
                   <ListItem key={index}>{client}</ListItem>
