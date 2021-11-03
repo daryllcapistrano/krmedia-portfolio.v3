@@ -5,8 +5,8 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import Logo from '../Logo';
 
 const Links = [
-  { text: 'videography', url: '/videography' },
-  { text: 'photography', url: '/photography' },
+  { text: 'video', url: '/videography' },
+  { text: 'photo', url: '/photography' },
   { text: 'contact', url: '/contact' },
 ];
 
