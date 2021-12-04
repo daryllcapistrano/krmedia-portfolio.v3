@@ -5,9 +5,9 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import Logo from '../Logo';
 
 const Links = [
-  { text: 'video', url: '/videography' },
-  { text: 'photo', url: '/photography' },
-  { text: 'contact', url: '/contact' },
+  { text: 'VIDEO', url: '/videography' },
+  { text: 'PHOTO', url: '/photography' },
+  { text: 'CONTACT', url: '/contact' },
 ];
 
 export default function Header() {
@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <>
-      <Box bg={useColorModeValue('white', 'black')} px={4} mt={3} fontFamily={'Poppins'}>
+      <Box bg={useColorModeValue('black', 'white')} px={4} mt={3} fontFamily={'Poppins'}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'lg'}
@@ -33,7 +33,7 @@ export default function Header() {
               display={{ base: 'none', md: 'flex' }}
               fontWeight={500}
               // text color for links
-              color={useColorModeValue('black', 'white')}
+              color={useColorModeValue('white', 'black')}
             >
               {Links.map((link) => (
                 <Link as={GatsbyLink} key={link.url} to={link.url} _hover={'none'}>

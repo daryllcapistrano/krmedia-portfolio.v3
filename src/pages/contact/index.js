@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/Layout';
 import { FcCellPhone, FcGoogle } from 'react-icons/fc';
+import { GrInstagram } from 'react-icons/gr';
 import { Button, Center, Container, Stack, SimpleGrid, UnorderedList, ListItem, Text } from '@chakra-ui/react';
 
 const clients = [
@@ -28,6 +29,9 @@ const clients = [
   'Bonfire Outerwear',
   'WornPath',
   'Bitters',
+  'Hoka',
+  'Sorel',
+  'Sims',
 ];
 
 const ContactPage = ({ data }) => {
@@ -35,24 +39,31 @@ const ContactPage = ({ data }) => {
     <main>
       <Layout>
         <SimpleGrid columns={[1, null, 2]} spacing="20px" margin="auto" pt="12" maxWidth="900px">
-          <Container>
+          <Container pb={'14'}>
             <GatsbyImage image={data.allFile.nodes[0].childImageSharp.gatsbyImageData} />
-            <Stack spacing={2} align={'center'} maxW={'md'} w={'full'}>
-              <Button w={'full'} maxW={'md'} variant={'outline'} leftIcon={<FcCellPhone />} marginTop="10">
+            <Stack spacing={2} align={'center'} maxW={'md'} w={'min'} margin="auto">
+              <Button
+                colorScheme="black"
+                w={'full'}
+                maxW={'md'}
+                variant={'outline'}
+                leftIcon={<FcCellPhone />}
+                marginTop="10"
+              >
                 <Center>
-                  <a href="tel:971.347.6704">call me: 971.347.6704</a>
+                  <a href="tel:971.347.6704">971.347.6704</a>
                 </Center>
               </Button>
-              <Button w={'full'} maxW={'md'} variant={'outline'} leftIcon={<FcGoogle />}>
+              <Button colorScheme="black" w={'full'} maxW={'md'} variant={'outline'} leftIcon={<FcGoogle />}>
                 <Center>
-                  <a href="mailto:keatonrodgersmedia@gmail.com">email me: keatonrodgersmedia</a>
+                  <a href="mailto:keatonrodgersmedia@gmail.com">keatonrodgersmedia</a>
                 </Center>
               </Button>
-              {/* <Button w={'full'} maxW={'md'} variant={'outline'} leftIcon={<FcGoogle />}>
+              <Button colorScheme="black" w={'full'} maxW={'md'} variant={'outline'} leftIcon={<GrInstagram />}>
                 <Center>
-                  <a href="mailto:keatonrodgersmedia@gmail.com">keatonrodgersmedia@gmail.com</a>
+                  <a href="https://www.instagram.com/keatonrodgers">Instagram</a>
                 </Center>
-              </Button> */}
+              </Button>
             </Stack>
           </Container>
           <Center>
