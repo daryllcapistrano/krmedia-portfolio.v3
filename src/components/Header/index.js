@@ -33,10 +33,10 @@ export default function Header() {
               display={{ base: 'none', md: 'flex' }}
               fontWeight={500}
               // text color for links
-              color={useColorModeValue('white', 'black')}
+              color={useColorModeValue('black', 'white')}
             >
               {Links.map((link) => (
-                <Link as={GatsbyLink} key={link.url} to={link.url} _hover={'none'}>
+                <Link as={GatsbyLink} key={link.url} to={link.url} _hover={'none'} color="black">
                   {link.text}
                 </Link>
               ))}
