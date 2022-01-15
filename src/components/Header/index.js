@@ -1,6 +1,18 @@
 import * as React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
-import { Box, Flex, HStack, Link, IconButton, Button, useDisclosure, useColorModeValue, Stack } from '@chakra-ui/react';
+import {
+  Box,
+  Text,
+  Flex,
+  HStack,
+  Link,
+  IconButton,
+  Button,
+  useDisclosure,
+  useColorModeValue,
+  Stack,
+  SlideFade,
+} from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import Logo from '../Logo';
 
@@ -15,7 +27,7 @@ export default function Header() {
 
   return (
     <>
-      <Box fontFamily={'Poppins'}>
+      <Box pl={'4'} mt={'2'}>
         <Flex alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             variant={'ghost'}
@@ -28,27 +40,29 @@ export default function Header() {
             onClick={isOpen ? onClose : onOpen}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
           />
-          <HStack pl={'0'}>
+          <HStack px={'0'}>
             <Logo />
             <HStack as={'nav'} pl={'4'} mt={'4'} spacing={'8'} display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <Link as={GatsbyLink} key={link.url} to={link.url} _hover={'none'} fontSize={'large'}>
-                  {link.text}
+                <Link as={GatsbyLink} key={link.url} to={link.url} _hover={'none'}>
+                  <Text letterSpacing={'widest'}>{link.text}</Text>
                 </Link>
               ))}
             </HStack>
           </HStack>
         </Flex>
         {isOpen ? (
-          <Box my={'4'} px={'4'} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={'6'}>
-              {Links.map((link) => (
-                <Link as={GatsbyLink} key={link.url} to={link.url} fontSize={'lg'} _hover={'none'}>
-                  {link.text}
-                </Link>
-              ))}
-            </Stack>
-          </Box>
+          <SlideFade in={isOpen} offsetY="20px">
+            <Box my={'4'} px={'4'} display={{ md: 'none' }}>
+              <Stack as={'nav'} spacing={'6'}>
+                {Links.map((link) => (
+                  <Link as={GatsbyLink} key={link.url} to={link.url} fontSize={'lg'} _hover={'none'}>
+                    <Text letterSpacing={'widest'}>{link.text}</Text>
+                  </Link>
+                ))}
+              </Stack>
+            </Box>
+          </SlideFade>
         ) : null}
       </Box>
     </>

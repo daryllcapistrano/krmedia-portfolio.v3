@@ -8,6 +8,7 @@ const divStyles = {
   display: 'flex',
   flexDirection: 'column',
   minHeight: '100vh',
+  fontFamily: 'Poppins',
 };
 
 export default function Layout({ children }) {

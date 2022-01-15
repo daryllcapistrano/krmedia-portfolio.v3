@@ -6,14 +6,14 @@ import ReactPlayer from 'react-player/lazy';
 import Layout from '../../components/Layout';
 import { Link } from '@chakra-ui/react';
 
-import { IoMdArrowRoundBack } from 'react-icons/io';
+import { GrLinkPrevious } from 'react-icons/gr';
 
 const VideoPage = ({ data }) => {
   return (
     <Layout>
       <Container my={'8'}>
         <Link as={GatsbyLink} to="/videography">
-          <IoMdArrowRoundBack />
+          <GrLinkPrevious />
         </Link>
         <Box paddingTop="2">
           <Text textAlign={'center'} fontWeight={'light'}>

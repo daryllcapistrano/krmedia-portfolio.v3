@@ -3,8 +3,8 @@ import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/Layout';
 import { FcCellPhone, FcGoogle } from 'react-icons/fc';
-import { GrInstagram } from 'react-icons/gr';
-import { Button, Center, Container, Stack, SimpleGrid, UnorderedList, ListItem, Text, Flex } from '@chakra-ui/react';
+import { GrInstagram, GrVimeo, GrYoutube } from 'react-icons/gr';
+import { Button, Center, Container, Stack, VStack, SimpleGrid, UnorderedList, ListItem, Text, Flex } from '@chakra-ui/react';
 
 const clients = [
   'Nike',
@@ -38,34 +38,62 @@ const ContactPage = ({ data }) => {
   return (
     <main>
       <Layout>
-        <SimpleGrid columns={[1, null, 2]} spacing="20px" margin="auto" pt="12" maxWidth="900px">
-          <Container>
+        <SimpleGrid columns={[1, null, 2]} margin={'auto'} pt={'4'} px={{ base: '0', md: '24' }}>
+          <Flex justifyContent={'center'}>
             <GatsbyImage image={data.allFile.nodes[0].childImageSharp.gatsbyImageData} />
-          </Container>
+          </Flex>
           <Stack>
-            <Container>
-              <Stack spacing={4} maxW={'md'} w={'min'} mb={'8'}>
+            <Text alignSelf={'center'} fontWeight={'bold'} pt={'4'}>
+              Keaton Rodgers
+            </Text>
+            <Text alignSelf={'center'} fontWeight={'light'}>
+              Director / Cinematographer / Editor
+            </Text>
+            <Container alignContent={'center'}>
+              <VStack spacing={'4'} py={'8'}>
                 <Flex alignItems={'center'}>
                   <FcCellPhone />
                   <a href="tel:971.347.6704">
-                    <Text mx={'4'}>(971) 347-6704</Text>
+                    <Text fontSize={'small'} fontWeight={'light'} mx={'4'}>
+                      (971) 347-6704
+                    </Text>
                   </a>
                 </Flex>
                 <Flex alignItems={'center'}>
                   <FcGoogle />
                   <a href="mailto:keatonrodgersmedia@gmail.com">
-                    <Text mx={'4'}>keatonrodgersmedia</Text>
+                    <Text fontSize={'small'} fontWeight={'light'} mx={'4'}>
+                      @keatonrodgersmedia
+                    </Text>
                   </a>
                 </Flex>
                 <Flex alignItems={'center'}>
                   <GrInstagram />
                   <a href="https://www.instagram.com/keatonrodgers">
-                    <Text mx={'4'}>@keatonrodgers</Text>
+                    <Text fontSize={'small'} fontWeight={'light'} mx={'4'}>
+                      follow me on Instagram
+                    </Text>
                   </a>
                 </Flex>
-              </Stack>
+                <Flex alignItems={'center'}>
+                  <GrVimeo />
+                  <a href="https://vimeo.com/user135455357">
+                    <Text fontSize={'small'} fontWeight={'light'} mx={'4'}>
+                      follow me on Vimeo
+                    </Text>
+                  </a>
+                </Flex>
+                <Flex alignItems={'center'}>
+                  <GrYoutube />
+                  <a href="https://www.youtube.com/user/keatonrodgers">
+                    <Text fontSize={'small'} fontWeight={'light'} mx={'4'}>
+                      subscribe on YouTube
+                    </Text>
+                  </a>
+                </Flex>
+              </VStack>
             </Container>
-            <Container>
+            <Container px={{ base: '6' }}>
               <Text fontWeight={'semibold'} color={'gray.400'} mb={'4'}>
                 Select Clients
               </Text>
@@ -90,7 +118,7 @@ export const query = graphql`
       nodes {
         id
         childImageSharp {
-          gatsbyImageData(quality: 90, height: 600)
+          gatsbyImageData(quality: 90, height: 550)
         }
       }
     }

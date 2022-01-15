@@ -11,11 +11,17 @@ const imageStyles = {
   cursor: 'pointer',
 };
 
+const options = {
+  caption: {
+    showCaption: false,
+  },
+};
+
 const PhotographyPage = ({ data }) => {
   return (
     <main>
       <Layout>
-        <SRLWrapper>
+        <SRLWrapper options={options}>
           <Box padding={4} w="100%" maxW="1200px" mx="auto" sx={{ columnCount: [1, 2, 3], columnGap: '8px' }}>
             {/* map over graphql data */}
             {data.images.nodes.map((node, index) => {
