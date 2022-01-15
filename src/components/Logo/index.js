@@ -4,7 +4,7 @@ import GifLogo from '../../images/assets/logo-blend.gif';
 
 const Logo = () => {
   return (
-    <Container w="100px" margin="auto">
+    <Container w={'100px'} p={'0'}>
       <img src={GifLogo} alt="Keaton Rodgers Motion And Stills" />
     </Container>
   );

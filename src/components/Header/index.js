@@ -15,62 +15,36 @@ export default function Header() {
 
   return (
     <>
-      <Box bg={useColorModeValue('black', 'white')} px={4} mt={3} fontFamily={'Poppins'}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+      <Box fontFamily={'Poppins'}>
+        <Flex alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
-            size={'lg'}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            background={'white'}
+            variant={'ghost'}
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
+            ml={'4'}
+            size={'lg'}
+            color={'black'}
+            colorScheme={'blackAlpha'}
             onClick={isOpen ? onClose : onOpen}
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
           />
-          <HStack alignItems={'center'}>
+          <HStack pl={'0'}>
             <Logo />
-            <HStack
-              as={'nav'}
-              spacing={4}
-              display={{ base: 'none', md: 'flex' }}
-              fontWeight={500}
-              // text color for links
-              color={useColorModeValue('black', 'white')}
-            >
+            <HStack as={'nav'} pl={'4'} mt={'4'} spacing={'8'} display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <Link as={GatsbyLink} key={link.url} to={link.url} _hover={'none'} color="black">
+                <Link as={GatsbyLink} key={link.url} to={link.url} _hover={'none'} fontSize={'large'}>
                   {link.text}
                 </Link>
               ))}
             </HStack>
           </HStack>
-          {/* <Flex alignItems={'center'}>
-            <Menu>
-              <MenuButton as={Button} rounded={'full'} variant={'link'} cursor={'pointer'} minW={0}>
-                <Avatar size={'lg'} src={AvatarImage} />
-              </MenuButton>
-              <MenuList>
-                <MenuItem>
-                  <a href="https://www.instagram.com/keatonrodgers">Instagram</a>
-                </MenuItem>
-                <MenuItem>
-                  <a href="https://www.instagram.com/keatonrodgers">Instagram</a>
-                </MenuItem>
-                <MenuItem>
-                  <a href="https://www.instagram.com/keatonrodgers">Instagram</a>
-                </MenuItem>
-              </MenuList>
-            </Menu>
-          </Flex> */}
         </Flex>
-
-        {/* mobile menu */}
         {isOpen ? (
-          <Box my={4} display={{ md: 'none' }} p="20px" rounded="md" shadow="md">
-            <Stack as={'nav'} spacing={6} fontWeight={500}>
+          <Box my={'4'} pl={'4'} display={{ md: 'none' }}>
+            <Stack as={'nav'} spacing={'6'}>
               {Links.map((link) => (
-                <Link as={GatsbyLink} key={link.url} to={link.url} display="inline-block" _hover={'none'}>
-                  <Button colorScheme={'blackAlpha'} isFullWidth>
-                    {link.text}
-                  </Button>
+                <Link as={GatsbyLink} key={link.url} to={link.url} fontSize={'lg'} _hover={'none'}>
+                  {link.text}
                 </Link>
               ))}
             </Stack>

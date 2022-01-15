@@ -8,9 +8,9 @@ const VideographyPage = ({ data }) => {
   return (
     <main>
       <Layout>
-        <SimpleGrid columns={[1, null, 2]} spacing="20px" margin="auto" pb="200px" pt="50px" px="4" maxW="1200px">
+        <SimpleGrid columns={[1, null, 2]} spacing={'4'} maxW={'1200px'} margin={'auto'} px={'4'} pt={'4'}>
           {data.allMdx.nodes.map((node) => (
-            <Box key={node.id} paddingTop={'8'}>
+            <Box key={node.id}>
               <Link to={`/videography/${node.slug}`}>
                 <GatsbyImage
                   image={node.frontmatter.hero_image.childImageSharp.gatsbyImageData}
