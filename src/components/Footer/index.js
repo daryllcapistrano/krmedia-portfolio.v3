@@ -26,20 +26,21 @@ const SocialButton = ({ children, label, href }) => {
   );
 };
 
+const currDate = new Date().getFullYear();
+
 export default function Footer() {
   return (
-    <Box bg={useColorModeValue('gray.50', 'gray.900')} color={useColorModeValue('gray.700', 'gray.200')}>
+    <Box bg={useColorModeValue('gray.50', 'gray.900')} color={useColorModeValue('gray.700', 'gray.200')} mt={'36'}>
       <Container
         as={Stack}
         maxW={'6xl'}
         minH={'md'}
-        py={4}
         direction={{ base: 'column', md: 'row' }}
         spacing={4}
         justify={{ base: 'center', md: 'space-between' }}
-        align={{ base: 'center', md: 'center' }}
+        align={{ base: 'end', md: 'end' }}
+        pb={{ md: '16' }}
       >
-        <Text fontWeight={'hairline'}>© 2021 Keaton Rodgers. All rights reserved</Text>
         <Stack direction={'row'} spacing={6}>
           <SocialButton label={'Vimeo'} href={'https://vimeo.com/user135455357'}>
             <FaVimeoV />
@@ -51,6 +52,7 @@ export default function Footer() {
             <FaInstagram />
           </SocialButton>
         </Stack>
+        <Text fontWeight={'hairline'}>© {currDate} Keaton Rodgers. All rights reserved</Text>
       </Container>
     </Box>
   );

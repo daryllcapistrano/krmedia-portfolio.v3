@@ -11,42 +11,40 @@ import { IoMdArrowRoundBack } from 'react-icons/io';
 const VideoPage = ({ data }) => {
   return (
     <Layout>
-      {/* <Center flex={'1'} marginY="28"> */}
-      <Container maxWidth="100vw" marginTop="10" marginBottom="24">
-        <Link as={GatsbyLink} to="/videography" fontWeight={'light'} mb={'4'}>
+      <Container my={'8'}>
+        <Link as={GatsbyLink} to="/videography">
           <IoMdArrowRoundBack />
-          back
         </Link>
         <Box paddingTop="2">
-          <ReactPlayer url={data.mdx.frontmatter.videoSourceURL} controls={true} width="auto" height="550px" />
-          <Text textAlign={'center'} mt={'4'} fontWeight={'light'}>
+          <Text textAlign={'center'} fontWeight={'light'}>
             {data.mdx.frontmatter.videoTitle}
           </Text>
+          <ReactPlayer url={data.mdx.frontmatter.videoSourceURL} controls={true} width="auto" />
         </Box>
 
         {/* conditionally render multiple video instances  */}
         {data.mdx.frontmatter.videoSourceURLTwo && (
           <Box paddingTop="10">
-            <ReactPlayer url={data.mdx.frontmatter.videoSourceURLTwo} controls={true} width="auto" height="550px" />
-            <Text textAlign={'center'} mt={'4'} fontWeight={'light'}>
+            <Text textAlign={'center'} fontWeight={'light'}>
               {data.mdx.frontmatter.videoTitleTwo}
             </Text>
+            <ReactPlayer url={data.mdx.frontmatter.videoSourceURLTwo} controls={true} width="auto" />
           </Box>
         )}
         {data.mdx.frontmatter.videoSourceURLThree && (
           <Box paddingTop="10">
-            <ReactPlayer url={data.mdx.frontmatter.videoSourceURLThree} controls={true} width="auto" height="550px" />
-            <Text textAlign={'center'} mt={'4'} fontWeight={'light'}>
+            <Text textAlign={'center'} fontWeight={'light'}>
               {data.mdx.frontmatter.videoTitleThree}
             </Text>
+            <ReactPlayer url={data.mdx.frontmatter.videoSourceURLThree} controls={true} width="auto" />
           </Box>
         )}
         {data.mdx.frontmatter.videoSourceURLFour && (
           <Box paddingTop="10">
-            <ReactPlayer url={data.mdx.frontmatter.videoSourceURLFour} controls={true} width="auto" height="550px" />
-            <Text textAlign={'center'} mt={'4'} fontWeight={'light'}>
+            <Text textAlign={'center'} fontWeight={'light'}>
               {data.mdx.frontmatter.videoTitleFour}
             </Text>
+            <ReactPlayer url={data.mdx.frontmatter.videoSourceURLFour} controls={true} width="auto" />
           </Box>
         )}
         {/* end conditional rendering */}

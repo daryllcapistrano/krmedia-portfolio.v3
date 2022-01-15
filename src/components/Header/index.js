@@ -40,7 +40,7 @@ export default function Header() {
           </HStack>
         </Flex>
         {isOpen ? (
-          <Box my={'4'} pl={'4'} display={{ md: 'none' }}>
+          <Box my={'4'} px={'4'} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={'6'}>
               {Links.map((link) => (
                 <Link as={GatsbyLink} key={link.url} to={link.url} fontSize={'lg'} _hover={'none'}>

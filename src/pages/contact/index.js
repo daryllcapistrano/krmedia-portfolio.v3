@@ -4,7 +4,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/Layout';
 import { FcCellPhone, FcGoogle } from 'react-icons/fc';
 import { GrInstagram } from 'react-icons/gr';
-import { Button, Center, Container, Stack, SimpleGrid, UnorderedList, ListItem, Text } from '@chakra-ui/react';
+import { Button, Center, Container, Stack, SimpleGrid, UnorderedList, ListItem, Text, Flex } from '@chakra-ui/react';
 
 const clients = [
   'Nike',
@@ -39,43 +39,45 @@ const ContactPage = ({ data }) => {
     <main>
       <Layout>
         <SimpleGrid columns={[1, null, 2]} spacing="20px" margin="auto" pt="12" maxWidth="900px">
-          <Container pb={'14'}>
+          <Container>
             <GatsbyImage image={data.allFile.nodes[0].childImageSharp.gatsbyImageData} />
-            <Stack spacing={2} align={'center'} maxW={'md'} w={'min'} margin="auto">
-              <Button
-                colorScheme="black"
-                w={'full'}
-                maxW={'md'}
-                variant={'outline'}
-                leftIcon={<FcCellPhone />}
-                marginTop="10"
-              >
-                <Center>
-                  <a href="tel:971.347.6704">971.347.6704</a>
-                </Center>
-              </Button>
-              <Button colorScheme="black" w={'full'} maxW={'md'} variant={'outline'} leftIcon={<FcGoogle />}>
-                <Center>
-                  <a href="mailto:keatonrodgersmedia@gmail.com">keatonrodgersmedia</a>
-                </Center>
-              </Button>
-              <Button colorScheme="black" w={'full'} maxW={'md'} variant={'outline'} leftIcon={<GrInstagram />}>
-                <Center>
-                  <a href="https://www.instagram.com/keatonrodgers">Instagram</a>
-                </Center>
-              </Button>
-            </Stack>
           </Container>
-          <Center>
-            <Stack spacing={2} align={'center'} maxW={'md'} w={'full'} h={'100vh'} padding="4">
-              <Text fontWeight="bold">Select Clients</Text>
-              <UnorderedList styleType="none" width="100%" fontSize="sm">
+          <Stack>
+            <Container>
+              <Stack spacing={4} maxW={'md'} w={'min'} mb={'8'}>
+                <Flex alignItems={'center'}>
+                  <FcCellPhone />
+                  <a href="tel:971.347.6704">
+                    <Text mx={'4'}>(971) 347-6704</Text>
+                  </a>
+                </Flex>
+                <Flex alignItems={'center'}>
+                  <FcGoogle />
+                  <a href="mailto:keatonrodgersmedia@gmail.com">
+                    <Text mx={'4'}>keatonrodgersmedia</Text>
+                  </a>
+                </Flex>
+                <Flex alignItems={'center'}>
+                  <GrInstagram />
+                  <a href="https://www.instagram.com/keatonrodgers">
+                    <Text mx={'4'}>@keatonrodgers</Text>
+                  </a>
+                </Flex>
+              </Stack>
+            </Container>
+            <Container>
+              <Text fontWeight={'semibold'} color={'gray.400'} mb={'4'}>
+                Select Clients
+              </Text>
+              <Flex flexWrap={'wrap'}>
                 {clients.map((client, index) => (
-                  <ListItem key={index}>{client}</ListItem>
+                  <Text key={index} mb={'1'} p={'1'} fontSize={'small'} fontWeight={'light'}>
+                    {client}
+                  </Text>
                 ))}
-              </UnorderedList>
-            </Stack>
-          </Center>
+              </Flex>
+            </Container>
+          </Stack>
         </SimpleGrid>
       </Layout>
     </main>
