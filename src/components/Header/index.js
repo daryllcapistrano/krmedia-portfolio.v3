@@ -1,18 +1,6 @@
 import * as React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
-import {
-  Box,
-  Text,
-  Flex,
-  HStack,
-  Link,
-  IconButton,
-  Button,
-  useDisclosure,
-  useColorModeValue,
-  Stack,
-  SlideFade,
-} from '@chakra-ui/react';
+import { Box, Text, Flex, HStack, Link, IconButton, useDisclosure, Stack, SlideFade } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import Logo from '../Logo';
 
@@ -27,7 +15,7 @@ export default function Header() {
 
   return (
     <>
-      <Box pl={'4'} mt={'2'}>
+      <Box pl={{ base: '0 ', md: '4' }} mt={'2'}>
         <Flex alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             variant={'ghost'}
@@ -35,7 +23,7 @@ export default function Header() {
             display={{ md: 'none' }}
             ml={'4'}
             size={'lg'}
-            color={'black'}
+            color={'gray.500'}
             colorScheme={'blackAlpha'}
             onClick={isOpen ? onClose : onOpen}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -51,20 +39,22 @@ export default function Header() {
             </HStack>
           </HStack>
         </Flex>
-        {isOpen ? (
-          <SlideFade in={isOpen} offsetY="20px">
-            <Box my={'4'} px={'4'} display={{ md: 'none' }}>
-              <Stack as={'nav'} spacing={'6'}>
-                {Links.map((link) => (
-                  <Link as={GatsbyLink} key={link.url} to={link.url} fontSize={'lg'} _hover={'none'}>
-                    <Text letterSpacing={'widest'}>{link.text}</Text>
-                  </Link>
-                ))}
-              </Stack>
-            </Box>
-          </SlideFade>
-        ) : null}
       </Box>
+
+      {/* mobile menu */}
+      {isOpen ? (
+        <SlideFade in={isOpen} offsetY="20px">
+          <Box my={'4'} px={'4'} display={{ md: 'none' }}>
+            <Stack as={'nav'} spacing={'6'}>
+              {Links.map((link) => (
+                <Link as={GatsbyLink} key={link.url} to={link.url} fontSize={'lg'} _hover={'none'}>
+                  <Text letterSpacing={'widest'}>{link.text}</Text>
+                </Link>
+              ))}
+            </Stack>
+          </Box>
+        </SlideFade>
+      ) : null}
     </>
   );
 }

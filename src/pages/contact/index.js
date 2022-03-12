@@ -3,8 +3,9 @@ import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/Layout';
 import { FcCellPhone, FcGoogle } from 'react-icons/fc';
-import { GrInstagram, GrVimeo, GrYoutube } from 'react-icons/gr';
-import { Button, Center, Container, Stack, VStack, SimpleGrid, UnorderedList, ListItem, Text, Flex } from '@chakra-ui/react';
+import { GrInstagram } from 'react-icons/gr';
+import { Container, Stack, VStack, SimpleGrid, Text, Flex } from '@chakra-ui/react';
+import { Helmet } from 'react-helmet';
 
 const clients = [
   'Nike',
@@ -16,7 +17,7 @@ const clients = [
   'Poler',
   'Timberline Lodge',
   'Alpental',
-  'The Summit at Snoqualmie',
+  'Summit at Snoqualmie',
   'Spy Optics',
   'Independent Trucks',
   'OJ Wheels',
@@ -32,11 +33,18 @@ const clients = [
   'Hoka',
   'Sorel',
   'Sims',
+  'Santa Cruz Skateboards',
 ];
 
+clients.sort();
+
+console.log(clients);
+
 const ContactPage = ({ data }) => {
+  const title = 'Keaton Rodgers Media | Contact Me';
   return (
     <main>
+      <Helmet defaultTitle="Keaton Rodgers Media" title={title} />{' '}
       <Layout>
         <SimpleGrid columns={[1, null, 2]} margin={'auto'} pt={'4'} px={{ base: '0', md: '24' }}>
           <Flex justifyContent={'center'}>
@@ -75,7 +83,7 @@ const ContactPage = ({ data }) => {
                     </Text>
                   </a>
                 </Flex>
-                <Flex alignItems={'center'}>
+                {/* <Flex alignItems={'center'}>
                   <GrVimeo />
                   <a href="https://vimeo.com/user135455357">
                     <Text fontSize={'small'} fontWeight={'light'} mx={'4'}>
@@ -90,7 +98,7 @@ const ContactPage = ({ data }) => {
                       subscribe on YouTube
                     </Text>
                   </a>
-                </Flex>
+                </Flex> */}
               </VStack>
             </Container>
             <Container px={{ base: '6' }}>

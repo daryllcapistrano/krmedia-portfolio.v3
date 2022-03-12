@@ -3,10 +3,13 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import { SimpleGrid, Box, Text } from '@chakra-ui/react';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { Helmet } from 'react-helmet';
 
 const VideographyPage = ({ data }) => {
+  const title = 'Keaton Rodgers Media | Videography';
   return (
     <main>
+      <Helmet defaultTitle="Keaton Rodgers Media" title={title} />
       <Layout>
         <SimpleGrid columns={[1, null, 2]} spacing={'4'} maxW={'1200px'} margin={'auto'} px={'4'} pt={'4'}>
           {data.allMdx.nodes.map((node) => (
@@ -28,7 +31,9 @@ const VideographyPage = ({ data }) => {
   );
 };
 
-// GraphQL markdown query in order
+// * GraphQL markdown query in ascending order
+// *
+// *
 export const query = graphql`
   {
     allMdx(sort: { order: ASC, fields: frontmatter___order }) {
@@ -41,7 +46,7 @@ export const query = graphql`
           order
           hero_image {
             childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, quality: 90)
+              gatsbyImageData(placeholder: NONE, quality: 90)
             }
           }
         }

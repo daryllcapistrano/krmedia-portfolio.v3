@@ -1,24 +1,29 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import GatsbyLink from 'gatsby-link';
-import { Box, Container, Text } from '@chakra-ui/layout';
+import { Box, Container, Text, HStack } from '@chakra-ui/layout';
 import ReactPlayer from 'react-player/lazy';
 import Layout from '../../components/Layout';
 import { Link } from '@chakra-ui/react';
-
+import { Helmet } from 'react-helmet';
 import { GrLinkPrevious } from 'react-icons/gr';
 
 const VideoPage = ({ data }) => {
+  const title = data.mdx.frontmatter.title;
+
   return (
     <Layout>
+      <Helmet defaultTitle="Keaton Rodgers Media" title={title} />
       <Container my={'8'}>
-        <Link as={GatsbyLink} to="/videography">
-          <GrLinkPrevious />
-        </Link>
         <Box paddingTop="2">
-          <Text textAlign={'center'} fontWeight={'light'}>
-            {data.mdx.frontmatter.videoTitle}
-          </Text>
+          <HStack justifyContent={'space-between'} mb={'8'}>
+            <Link as={GatsbyLink} to="/videography">
+              <GrLinkPrevious />
+            </Link>
+            <Text textAlign={'center'} fontWeight={'light'}>
+              {data.mdx.frontmatter.videoTitle}
+            </Text>
+          </HStack>
           <ReactPlayer url={data.mdx.frontmatter.videoSourceURL} controls={true} width="auto" />
         </Box>
 

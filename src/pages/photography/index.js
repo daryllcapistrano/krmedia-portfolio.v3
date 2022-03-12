@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/Layout';
 import { Box } from '@chakra-ui/react';
-
+import { Helmet } from 'react-helmet';
 import { SRLWrapper } from 'simple-react-lightbox';
 
 const imageStyles = {
@@ -18,8 +18,10 @@ const options = {
 };
 
 const PhotographyPage = ({ data }) => {
+  const title = 'Keaton Rodgers Media | Photography';
   return (
     <main>
+      <Helmet defaultTitle="Keaton Rodgers Media" title={title} />
       <Layout>
         <SRLWrapper options={options}>
           <Box padding={4} w="100%" maxW="1200px" mx="auto" sx={{ columnCount: [1, 2, 3], columnGap: '8px' }}>
@@ -44,7 +46,7 @@ export const query = graphql`
         id
         relativePath
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, quality: 90)
+          gatsbyImageData(placeholder: NONE, quality: 90)
         }
       }
     }
