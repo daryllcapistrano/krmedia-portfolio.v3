@@ -18,7 +18,7 @@ const options = {
 };
 
 const PhotographyPage = ({ data }) => {
-  const title = 'Keaton Rodgers Media | Photography';
+  const title = 'KEATON RODGERS';
   return (
     <main>
       <Helmet defaultTitle="Keaton Rodgers Media" title={title} />

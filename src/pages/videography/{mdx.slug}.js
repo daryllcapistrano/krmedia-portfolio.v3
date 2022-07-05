@@ -20,7 +20,7 @@ const VideoPage = ({ data }) => {
             <Link as={GatsbyLink} to="/videography">
               <GrLinkPrevious />
             </Link>
-            <Text textAlign={'center'} fontWeight={'light'}>
+            <Text textAlign={'center'} fontWeight={'light'} textTransform={'uppercase'}>
               {data.mdx.frontmatter.videoTitle}
             </Text>
           </HStack>
@@ -30,7 +30,7 @@ const VideoPage = ({ data }) => {
         {/* conditionally render multiple video instances  */}
         {data.mdx.frontmatter.videoSourceURLTwo && (
           <Box paddingTop="10">
-            <Text textAlign={'center'} fontWeight={'light'}>
+            <Text textAlign={'center'} fontWeight={'light'} textTransform={'uppercase'}>
               {data.mdx.frontmatter.videoTitleTwo}
             </Text>
             <ReactPlayer url={data.mdx.frontmatter.videoSourceURLTwo} controls={true} width="auto" />
@@ -38,7 +38,7 @@ const VideoPage = ({ data }) => {
         )}
         {data.mdx.frontmatter.videoSourceURLThree && (
           <Box paddingTop="10">
-            <Text textAlign={'center'} fontWeight={'light'}>
+            <Text textAlign={'center'} fontWeight={'light'} textTransform={'uppercase'}>
               {data.mdx.frontmatter.videoTitleThree}
             </Text>
             <ReactPlayer url={data.mdx.frontmatter.videoSourceURLThree} controls={true} width="auto" />
@@ -46,7 +46,7 @@ const VideoPage = ({ data }) => {
         )}
         {data.mdx.frontmatter.videoSourceURLFour && (
           <Box paddingTop="10">
-            <Text textAlign={'center'} fontWeight={'light'}>
+            <Text textAlign={'center'} fontWeight={'light'} textTransform={'uppercase'}>
               {data.mdx.frontmatter.videoTitleFour}
             </Text>
             <ReactPlayer url={data.mdx.frontmatter.videoSourceURLFour} controls={true} width="auto" />

@@ -26,7 +26,7 @@ const currDate = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <Box bg={'gray.50'} color={'gray.700'} mt={'36'}>
+    <Box bg={'inherit'} color={'gray.700'} mt={'36'}>
       <Container pt={'32'} margin={'auto'}>
         {/* <Stack direction={'row'} justifyContent={'space-around'} mb={'24'} px={'16'}>
           <SocialButton label={'Vimeo'} href={'https://vimeo.com/user135455357'}>

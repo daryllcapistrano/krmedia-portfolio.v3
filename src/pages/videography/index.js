@@ -6,7 +6,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { Helmet } from 'react-helmet';
 
 const VideographyPage = ({ data }) => {
-  const title = 'Keaton Rodgers Media | Videography';
+  const title = 'KEATON RODGERS';
   return (
     <main>
       <Helmet defaultTitle="Keaton Rodgers Media" title={title} />
@@ -19,7 +19,7 @@ const VideographyPage = ({ data }) => {
                   image={node.frontmatter.hero_image.childImageSharp.gatsbyImageData}
                   alt={node.frontmatter.hero_image_alt}
                 />
-                <Text align={'start'} fontWeight={'light'}>
+                <Text align={'center'} fontWeight={'medium'} textTransform={'uppercase'}>
                   {node.frontmatter.title}
                 </Text>
               </Link>
