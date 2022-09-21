@@ -17,7 +17,7 @@ const options = {
   },
 };
 
-const PhotographyPage = ({ data }) => {
+const PhotoPage = ({ data }) => {
   const title = 'KEATON RODGERS';
   return (
     <main>
@@ -53,4 +53,4 @@ export const query = graphql`
   }
 `;
 
-export default PhotographyPage;
+export default PhotoPage;

@@ -31,6 +31,11 @@ const clients = [
   'Sorel',
   'Sims',
   'Santa Cruz Skateboards',
+  'Allbirds',
+  'The James Brand',
+  'Pacifico',
+  'Stanley',
+  'Teva',
 ];
 
 clients.sort();
