@@ -14,9 +14,6 @@ const clients = [
   'Prana',
   'Chrome Industries',
   'Poler',
-  'Timberline Lodge',
-  'Alpental',
-  'Summit at Snoqualmie',
   'Spy Optics',
   'Independent Trucks',
   'OJ Wheels',
@@ -25,8 +22,6 @@ const clients = [
   'Mob Grip',
   'Slime Balls',
   'NHS inc.',
-  'Slash Snowboards',
-  'WornPath',
   'Hoka',
   'Sorel',
   'Sims',
@@ -108,7 +103,7 @@ const ContactPage = ({ data }) => {
 
 export const query = graphql`
   {
-    allFile(filter: { sourceInstanceName: { eq: "assets" }, relativePath: { eq: "contact-image.jpg" } }) {
+    allFile(filter: { sourceInstanceName: { eq: "assets" }, relativePath: { eq: "bts-me.jpg" } }) {
       nodes {
         id
         childImageSharp {
