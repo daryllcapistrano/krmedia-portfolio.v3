@@ -5,7 +5,7 @@ import { SimpleGrid, Box, Text } from '@chakra-ui/react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { Helmet } from 'react-helmet';
 
-const VideoPage = ({ data }) => {
+const Work = ({ data }) => {
   const title = 'KEATON RODGERS';
   return (
     <main>
@@ -14,7 +14,7 @@ const VideoPage = ({ data }) => {
         <SimpleGrid columns={[1, null, 2]} spacing={'4'} maxW={'1200px'} margin={'auto'} px={'4'} pt={'4'}>
           {data.allMdx.nodes.map((node) => (
             <Box key={node.id}>
-              <Link to={`/video/${node.slug}`}>
+              <Link to={`/work/${node.slug}`}>
                 <GatsbyImage
                   image={node.frontmatter.hero_image.childImageSharp.gatsbyImageData}
                   alt={node.frontmatter.hero_image_alt}
@@ -55,4 +55,4 @@ export const query = graphql`
   }
 `;
 
-export default VideoPage;
+export default Work;

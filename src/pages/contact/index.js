@@ -71,7 +71,7 @@ const ContactPage = ({ data }) => {
                   <GrMailOption />
                   <a href="mailto:keatonrodgersmedia@gmail.com">
                     <Text fontSize={'small'} fontWeight={'light'} mx={'4'} textTransform={'uppercase'}>
-                      @keatonrodgersmedia
+                      keatonrodgersmedia@gmail.com
                     </Text>
                   </a>
                 </Flex>
