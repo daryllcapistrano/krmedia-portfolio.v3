@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box } from '@chakra-ui/layout';
-import LogoNew from '../../images/assets/logo.png';
+import LogoNew from '../../images/assets/kikidotcom-wordmark.png';
 
 const Logo = () => {
   return (

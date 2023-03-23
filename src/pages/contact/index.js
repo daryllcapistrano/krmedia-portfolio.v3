@@ -42,19 +42,24 @@ const ContactPage = ({ data }) => {
       <Helmet defaultTitle="Keaton Rodgers Media" title={title} />{' '}
       <Layout>
         <SimpleGrid columns={[1, null, 2]} margin={'auto'} pt={'4'} px={{ base: '0', md: '24' }}>
-          <Flex justifyContent={'center'}>
+          <Container>
             <GatsbyImage image={data.allFile.nodes[0].childImageSharp.gatsbyImageData} />
-          </Flex>
+            <Text fontSize={'x-small'} fontWeight={'hairline'}>
+              Photo by Eric Hinsperger
+            </Text>
+          </Container>
           <Stack>
-            <Text alignSelf={'center'} fontWeight={'bold'} pt={'4'} textTransform={'uppercase'}>
-              Keaton Rodgers
-            </Text>
-            <Text alignSelf={'center'} fontWeight={'light'} textTransform={'uppercase'}>
-              Director / Cinematographer / Editor
-            </Text>
-            <Container alignContent={'center'}>
-              <VStack spacing={'4'} py={'8'}>
-                <Flex alignItems={'center'}>
+            <Container px={{ base: '6' }} pt={'6'}>
+              <Text fontWeight={'bold'} textTransform={'uppercase'}>
+                Keaton Rodgers
+              </Text>
+              <Text fontWeight={'light'} textTransform={'uppercase'}>
+                Director / Cinematographer / Editor
+              </Text>
+            </Container>
+            <Container px={{ base: '6' }}>
+              <VStack alignItems={'left'} spacing={'4'} py={'8'}>
+                <Flex>
                   <GrPhone />
                   <a href="tel:971.347.6704">
                     <Text fontSize={'small'} fontWeight={'light'} mx={'4'} textTransform={'uppercase'}>
@@ -62,7 +67,7 @@ const ContactPage = ({ data }) => {
                     </Text>
                   </a>
                 </Flex>
-                <Flex alignItems={'center'}>
+                <Flex>
                   <GrMailOption />
                   <a href="mailto:keatonrodgersmedia@gmail.com">
                     <Text fontSize={'small'} fontWeight={'light'} mx={'4'} textTransform={'uppercase'}>
@@ -70,7 +75,7 @@ const ContactPage = ({ data }) => {
                     </Text>
                   </a>
                 </Flex>
-                <Flex alignItems={'center'}>
+                <Flex>
                   <GrInstagram />
                   <a href="https://www.instagram.com/keatonrodgers">
                     <Text fontSize={'small'} fontWeight={'light'} mx={'4'} textTransform={'uppercase'}>

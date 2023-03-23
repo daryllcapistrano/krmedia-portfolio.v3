@@ -3,12 +3,13 @@ import Header from '../Header';
 import Footer from '../Footer';
 
 const divStyles = {
-  background: 'rgb(245,232,200)',
+  background: '#DCD9D0',
   color: '#000000',
   display: 'flex',
   flexDirection: 'column',
   minHeight: '100vh',
-  fontFamily: 'Poppins',
+  fontFamily: 'Helvetica',
+  textTransform: 'uppercase',
 };
 
 export default function Layout({ children }) {

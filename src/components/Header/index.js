@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
-import { Box, Text, Flex, HStack, Link, IconButton, useDisclosure, Stack, SlideFade } from '@chakra-ui/react';
+import { Box, Text, Flex, HStack, Link, IconButton, useDisclosure, Stack, SlideFade, SimpleGrid } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import Logo from '../Logo';
 
@@ -16,11 +16,11 @@ export default function Header() {
   return (
     <>
       <Box>
-        <Flex alignItems={'center'} justifyContent={'space-around'}>
-          <Box maxW={'300px'}>
+        <SimpleGrid columns={[1, null, 2]} spacing={'4'} maxW={'1200px'} margin={'auto'} px={'4'} pt={'4'}>
+          <Box maxW={'300px'} ml={'-9'}>
             <Logo />
           </Box>
-          <HStack as={'nav'} spacing={'8'} display={{ base: 'none', md: 'flex' }}>
+          <HStack as={'nav'} spacing={'8'} display={{ base: 'none', md: 'flex' }} justifyContent={'flex-end'}>
             {Links.map((link) => (
               <Link as={GatsbyLink} key={link.url} to={link.url} _hover={'none'}>
                 <Text letterSpacing={'widest'} fontWeight={'medium'}>
@@ -29,7 +29,7 @@ export default function Header() {
               </Link>
             ))}
           </HStack>
-        </Flex>
+        </SimpleGrid>
         <Flex justifyContent={'center'}>
           <IconButton
             variant={'ghost'}
