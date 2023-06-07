@@ -11,7 +11,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/kr-logo.png',
+        icon: 'src/images/kikidotcom-favicon1.png',
       },
     },
     'gatsby-plugin-sharp',
