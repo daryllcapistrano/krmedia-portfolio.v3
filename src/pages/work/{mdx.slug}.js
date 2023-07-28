@@ -26,7 +26,6 @@ const Work = ({ data }) => {
           </HStack>
           <ReactPlayer url={data.mdx.frontmatter.videoSourceURL} controls={true} width="auto" />
         </Box>
-
         {/* conditionally render multiple video instances  */}
         {data.mdx.frontmatter.videoSourceURLTwo && (
           <Box paddingTop="10">
@@ -53,6 +52,37 @@ const Work = ({ data }) => {
           </Box>
         )}
         {/* end conditional rendering */}
+
+        {/* conditionally render credits */}
+        {data.mdx.frontmatter.client && (
+          <Box paddingTop="20">
+            <Text textAlign={'center'} fontWeight={'light'} textTransform={'uppercase'}>
+              client: {data.mdx.frontmatter.client}
+            </Text>
+          </Box>
+        )}
+        {data.mdx.frontmatter.agency && (
+          <Box paddingTop="2">
+            <Text textAlign={'center'} fontWeight={'light'} textTransform={'uppercase'}>
+              agency: {data.mdx.frontmatter.agency}
+            </Text>
+          </Box>
+        )}
+        {data.mdx.frontmatter.production && (
+          <Box paddingTop="2">
+            <Text textAlign={'center'} fontWeight={'light'} textTransform={'uppercase'}>
+              production company: {data.mdx.frontmatter.production}
+            </Text>
+          </Box>
+        )}
+        {data.mdx.frontmatter.director && (
+          <Box paddingTop="2">
+            <Text textAlign={'center'} fontWeight={'light'} textTransform={'uppercase'}>
+              Director {data.mdx.frontmatter.director}
+            </Text>
+          </Box>
+        )}
+        {/* end conditionally render credits */}
       </Container>
       {/* </Center> */}
     </Layout>
@@ -66,6 +96,10 @@ export const query = graphql`
       frontmatter {
         title
         order
+        client
+        agency
+        production
+        director
         videoSourceURL
         videoSourceURLTwo
         videoSourceURLThree

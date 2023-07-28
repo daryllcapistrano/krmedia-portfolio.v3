@@ -44,6 +44,10 @@ export const query = graphql`
           title
           hero_image_alt
           order
+          client
+          agency
+          production
+          director
           hero_image {
             childImageSharp {
               gatsbyImageData(placeholder: NONE, quality: 90)

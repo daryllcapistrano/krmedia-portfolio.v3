@@ -31,6 +31,7 @@ const clients = [
   'Pacifico',
   'Stanley',
   'Teva',
+  'Harley Davidson',
 ];
 
 clients.sort();
